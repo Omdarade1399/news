@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+<body>  
+    <%- include('component/header.ejs'); %>
+    <%- include('component/slider.ejs'); %>
+    <main class="row">
+        <div class="col-3 border m-auto text-center p-2">
+          <img src="logo/like.png" alt="News Banner" />
+          <h2>Murder Case In Pune</h2>
+          <p>
+            <script> 
+            let text1="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quas maiores vitae deserunt quam, nesciunt odit temporibus dolore cumque sit laudantium excepturi et eaque ipsa, modi, nulla ratione suscipit soluta delectus placeat qui dolores?";   
+            let sub1 = text1.substr(0,150);
+                document.write(sub1);
+          </script>
+          <a href="/home">Read More</a> </p>
+        </div>
+        <div class="col-3 border m-auto text-center p-2">
+          <img src="logo/like.png" alt="News Banner" />
+          <h2>Murder Case In Pune</h2>
+          <p>
+            <script> 
+            let text2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quas maiores vitae deserunt quam, nesciunt odit temporibus dolore cumque sit laudantium excepturi et eaque ipsa, modi, nulla ratione suscipit soluta delectus placeat qui dolores?";   
+            let sub2 = text2.substr(0,150);
+                document.write(sub2);
+          </script>
+          <a href="/home">Read More</a> </p>
+        </div>
+        <div class="col-3 border m-auto text-center p-2">
+          <img src="logo/like.png" alt="News Banner" />
+          <h2>Murder Case In Pune</h2>
+          <p>
+            <script> 
+              let text3="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quas maiores vitae deserunt quam, nesciunt odit temporibus dolore cumque sit laudantium excepturi et eaque ipsa, modi, nulla ratione suscipit soluta delectus placeat qui dolores?";
+              let sub3 = text3.substr(0,150);
+                document.write(sub3);
+          </script>
+          <a href="/home">Read More</a> </p>
+        </div>
+    </main>
+    <%- include('component/footer.ejs'); %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

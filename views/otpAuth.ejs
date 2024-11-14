@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTPAUTH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+<body>
+    <%- include('./component/header') %>
+    <form action="/forgot_password" method="post" class="m-auto container border p-3 border-secondary border-5 my-2">
+        <p class="text-center text-warning bg-secondary py-3 fs-3 fw-bold">forgot_password</p>
+        <input type="text" name="otp" id="otp" class="form-control my-2 border border-dark" placeholder="Enter OTP">
+        <input type="text" name="pwd" id="pwd" class="form-control my-2 border border-dark" placeholder="Enter New Password">
+        <input type="text" name="c_pwd" id="c_pwd" class="form-control my-2 border border-dark" placeholder="Enter Confirm Password">
+        <div class="text-center" id="timer"></div>
+
+        <div class="text-center">
+            <input type="submit" value="forgot_password" class="btn btn-success">
+        </div>
+    </form>
+    <script>
+        var time = 60;
+        var timerId = setInterval(countdown, 1000);
+        setTimeout(()=>{ alert("Your Existing Otp Expired"); },58000);
+        function countdown(){
+            if (time == -1) {
+                clearTimeout(timerId);
+                window.location.href="http://localhost:1000/otp_expired";
+            } else {
+                document.getElementById('timer').innerHTML ='<div style="background:yellow;padding:10px 0px;margin:10px auto;width:350px;">OTP Expired In '+ time +' Seconds</div>';
+                time--;
+            }
+        }
+    </script>
+
+     <script>
+    //     setInterval(myTimer, 1000);
+    //     function myTimer() {
+    //     const d = new Date();
+    //     const sec = d.getSeconds();
+    //     const dt = d.getMinutes();
+    //     document.getElementById("timer").innerHTML = "<p>Otp Expired in 10 Min "+sec+"</p>";
+    //     }        
+    //     setTimeout(()=>{
+    //         window.location.href="http://localhost:1000/otp_expired";
+    //     },120000);
+    </script>
+    <%- include('./component/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+<body>
+    <%- include('./component/header') %>
+    <form action="/update/<%= userdata.id %>" method="post" class="m-auto container border p-3 border-secondary border-5 my-2">
+        <p class="text-center text-warning bg-secondary py-3 fs-3 fw-bold">Edit Profile</p>
+        <input type="text" value="<%= userdata.full_name %>" name="full_name" id="name" class="form-control my-2 border border-dark" placeholder="Enter Your name">
+        <input type="text" value=<%= userdata.uname %> name="uname" id="uname" class="form-control my-2 border border-dark" placeholder="Enter Your uname">
+        <input type="text" value=<%= userdata.mobile %> name="mobile" id="mobile" class="form-control my-2 border border-dark" placeholder="Enter Your mobile">
+        <input type="text" value=<%= userdata.email %> name="email" id="email" class="form-control my-2 border border-dark" placeholder="Enter Your email">
+        <div class="text-center">
+            <input type="submit" value="Update" class="btn btn-success">
+        </div>
+    </form>
+    <%- include('./component/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

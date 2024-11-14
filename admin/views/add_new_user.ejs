@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add_new_user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info fw-bold fs-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="http://localhost:2000/logo/news.png" alt="logo" height="50px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/read_news">Read News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/read_user">Read Users</a>
+              </li>
+            </ul>
+          </div>
+          <% if (admindata.uname) { %>
+            <a href="/change_photo">
+              <img src="http://localhost:2000/<%= admindata.photo %>" alt="userprofile" height="50px" class="border rounded-circle">
+            </a>
+            <div class="dropdown px-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= admindata.uname %>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="/edit_profile">Edit Profile</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <li><a class="dropdown-item" href="/delete_account/<%= admindata.id %>">Delete Account</a></li>
+              </ul>
+            </div>
+          <% } else if (!admindata.uname) { %>
+            <a class="nav-link active" aria-current="page" href="/reg">Registration</a>
+            <a class="nav-link active" aria-current="page" href="/login">Login</a>
+          <% } %>
+        </div>
+    </nav>
+    <form action="/add_user" method="post" enctype="multipart/form-data" class="m-auto container border p-3 border-secondary border-5 my-2">
+        <p class="text-center text-warning bg-secondary py-3 fs-3 fw-bold">Add New User</p>    
+        <input type="text" name="full_name" id="name" class="form-control my-2 border border-dark" placeholder="Enter Your name">
+        <input type="text" name="uname" id="uname" class="form-control my-2 border border-dark" placeholder="Enter Your uname">
+        <input type="text" name="pwd" id="pwd" class="form-control my-2 border border-dark" placeholder="Enter Your Password">
+        <input type="text" name="mobile" id="mobile" class="form-control my-2 border border-dark" placeholder="Enter Your mobile">
+        <input type="text" name="email" id="email" class="form-control my-2 border border-dark" placeholder="Enter Your email">
+        <input type="file" name="photo" id="photo" class="form-control my-2 border border-dark">
+        <div class="text-center">
+            <input type="submit" value="Add User" class="btn btn-success">
+        </div>
+    </form>
+    <%- include('./component/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

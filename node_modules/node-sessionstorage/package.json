@@ -1,0 +1,11 @@
+{
+  "name": "node-sessionstorage",
+  "version": "1.0.0",
+  "description": "Emulator for browser window.sessionStorage in NodeJS enviroment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aleksey Bykhun @caffeinum",
+  "license": "MIT"
+}
